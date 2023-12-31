@@ -1,0 +1,34 @@
+초음파
+
+int Echo 13;
+int Trig 12;
+long duration;
+int distance;
+
+digitalWrite(Trig, LOW);
+delayMicroseconds(2);
+digitalWrite(Tirg, HIGH);
+delayMicroseconds(10);
+digitalWrite(Trig, LOW);
+duration = pulseIn(Echo, HIGH);
+distance = duration * 340 * 100 / 1000000 / 2;
+Serial.print("거리: ");
+Serial.print(distance);
+Serial.println("CM");
+
+RGB LED
+
+int pin_Red = 13;
+int pin_Green = 12;
+int pin_Blue = 11;
+
+PinMode(pin_Red,OUTPUT);
+PinMode(pin_Green,OUTPUT);
+PinMode(pin_Blue,OUTPUT);
+
+
+void RGB(int RV,int GV , int BV){
+  digitalWrite(pin_Red, RV);
+  digitalWrite(pin_Green, GV);
+  digitalWrite(pin_Blue, BV);
+}

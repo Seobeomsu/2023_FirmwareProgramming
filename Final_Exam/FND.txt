@@ -1,0 +1,57 @@
+#define A 2
+#define B 3
+#define C 4
+#define D 5
+#define E 6
+#define F 7
+#define G 8
+#define DP 9
+
+pinMode(A, OUTPUT);
+pinMode(B, OUTPUT);
+pinMode(C, OUTPUT);
+pinMode(D, OUTPUT);
+pinMode(E, OUTPUT);
+pinMode(F, OUTPUT);
+pinMode(G, OUTPUT);
+pinMode(DP, OUTPUT);
+
+void FND(int nA, int nB, int nC, int nD, int nE, int nF, int nG, int nDP){
+  digitalWrite(A, nA);
+  digitalWrite(B, nB);
+  digitalWrite(C, nC);
+  digitalWrite(D, nD);
+  digitalWrite(E, nE);
+  digitalWrite(F, nF);
+  digitalWrite(G, nG);
+  digitalWrite(DP, nDP);
+}
+
+0  FND(1,1,1,1,1,1,0,0);
+1  FND(0,1,1,0,0,0,0,0);
+2  FND(1,1,0,1,1,0,1,0);
+3  FND(1,1,1,1,0,0,1,0);
+4  FND(0,1,1,0,0,1,1,0);
+5  FND(1,0,1,1,0,1,1,0);
+6  FND(1,0,1,1,1,1,1,0);
+7  FND(1,1,1,0,0,0,0,0);
+8  FND(1,1,1,1,1,1,1,0);
+9  FND(1,1,1,0,0,1,1,0);
+
+int ON = HIGH;
+int OFF = LOW;
+
+int digits[10][8] = {
+  {ON,ON,ON,ON,ON,ON,OFF,ON},
+  {OFF,ON,ON,OFF,OFF,OFF,OFF,ON},
+  {ON,ON,OFF,ON,ON,OFF,ON,ON},
+  {ON,ON,ON,ON,OFF,OFF,ON,ON},
+  {OFF,ON,ON,OFF,OFF,ON,ON,ON},
+  {ON,OFF,ON,ON,OFF,ON,ON,ON},
+  {ON,OFF,ON,ON,ON,ON,ON,ON},
+  {ON,ON,ON,OFF,OFF,OFF,OFF,ON},
+  {ON,ON,ON,ON,ON,ON,ON,ON},
+  {ON,ON,ON,OFF,OFF,ON,ON,ON}
+};
+
+int pins[] = {2,3,4,5,6,7,8,9};

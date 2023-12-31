@@ -1,0 +1,28 @@
+블루투스 
+#include <SoftwareSerial.h>
+#define BTtx 2
+#define BTrx 3
+SoftwareSerial BT(BTtx , BTrx);
+int data;
+
+
+void setup(){
+  BT.begin(9600);
+  Serial.begin(9600);
+}
+
+
+  if(BT.available()>0){
+    Data = BT.read();
+    Serial.println(data);
+  }
+
+서브모터
+#include <Servo.h>
+Servo myServo;
+
+void setup(){
+  myServo.attach(9);
+}
+
+myServo.write(servoPos);
